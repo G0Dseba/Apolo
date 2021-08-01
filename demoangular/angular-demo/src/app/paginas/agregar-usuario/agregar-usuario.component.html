@@ -1,0 +1,35 @@
+<section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+        <div class="formularios">
+            <p-card>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Nombre de usuario</label>
+                    <input [(ngModel)]="agregarUsuario.nombre" type="text" name="nombre" class="form-control" id="username" aria-describedby="username">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
+                    <input [(ngModel)]="agregarUsuario.correo" type="email" name="correo" class="form-control" id="email"  size="30" required aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Telefono</label>
+                    <input [(ngModel)]="agregarUsuario.telefono" type="tel" name="telefono" class="form-control" id="telefono" aria-describedby="telefono" placeholder="9 Dígitos con Prefijo (Ej: +56912345678)">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contrasena</label>
+                    <input type="password" name="contrasena" class="form-control" id="Password1" placeholder="Entre 4 a 8 carácteres"
+                    [(ngModel)]="agregarUsuario.contrasena">
+                </div>
+                
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="terminos">
+                    <label class="form-check-label" for="exampleCheck1">Terminos y condiciones</label>
+                </div>
+                <button  class="btn btn-primary" (click)="registrar(agregarUsuario)">Registrarse</button>
+            </p-card>
+                
+            
+            <br>
+            
+        </div>
+    </div>
+</section>
