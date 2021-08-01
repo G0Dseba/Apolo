@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Usuario } from 'src/app/objetos/usuario';
-import { ServicioAutentificacionService } from 'src/app/services/servicio-autentificacion.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -11,14 +9,11 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class PaginaHomeComponent implements OnInit {
 
-  constructor(private usuarioService: UsuarioService, private loginService: ServicioAutentificacionService, protected router: Router) { }
+  constructor(private usuarioService: UsuarioService) { }
   listaUsuarios:Usuario[]=[];
   displayEditar:any = false;
-  usuarioEditar: Usuario = {};
+  usuarioEditar!: Usuario;
   ngOnInit(): void {
-    if(!this.loginService.validarUsuario()){
-      this.router.navigate(['/']);
-     }
     this.listarUsuarios();
   }
 

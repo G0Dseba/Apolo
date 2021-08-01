@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Noticia } from 'src/app/objetos/noticia';
 import { NoticiaService } from 'src/app/services/noticia.service';
-import { ServicioAutentificacionService } from 'src/app/services/servicio-autentificacion.service';
 
 @Component({
   selector: 'app-mostrar-noticia',
@@ -11,14 +9,11 @@ import { ServicioAutentificacionService } from 'src/app/services/servicio-autent
 })
 export class MostrarNoticiaComponent implements OnInit {
 
-  constructor(private noticiaService: NoticiaService, private loginService: ServicioAutentificacionService, protected router: Router) { }
+  constructor(private noticiaService: NoticiaService) { }
   listaNoticias:Noticia[]=[];
   displayEditar:any = false;
-  noticiaEditar: Noticia = {};
+  noticiaEditar!: Noticia;
   ngOnInit(): void {
-    if(!this.loginService.validarUsuario()){
-      this.router.navigate(['/']);
-     }
     this.listarNoticias();
   }
 

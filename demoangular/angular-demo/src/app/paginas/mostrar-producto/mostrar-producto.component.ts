@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Producto } from 'src/app/objetos/producto';
 import { ProductoService } from 'src/app/services/producto.service';
-import { ServicioAutentificacionService } from 'src/app/services/servicio-autentificacion.service';
 
 @Component({
   selector: 'app-mostrar-producto',
@@ -11,14 +9,11 @@ import { ServicioAutentificacionService } from 'src/app/services/servicio-autent
 })
 export class MostrarProductoComponent implements OnInit {
 
-  constructor(private productoService: ProductoService, private loginService: ServicioAutentificacionService, protected router: Router) { }
+  constructor(private productoService: ProductoService) { }
   listaProductos:Producto[]=[];
   displayEditar:any = false;
-  productoEditar: Producto = {};
+  productoEditar!: Producto;
   ngOnInit(): void {
-    if(!this.loginService.validarUsuario()){
-      this.router.navigate(['/']);
-     }
     this.listarProductos();
   }
 
