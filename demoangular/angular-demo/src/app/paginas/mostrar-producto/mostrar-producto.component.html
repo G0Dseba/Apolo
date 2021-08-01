@@ -1,0 +1,68 @@
+<section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+        <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+            <div class="grid">
+                <div *ngFor="let producto of listaProductos" class="col">
+                    <p-card>
+                        <div class="grid">
+                            <div class="col-12">
+                                {{producto.titulo}}
+                            </div>
+                            <div class="col-12 md-3">
+                                <img src="data:image/jpeg;base64,{{producto.imagen}}" width="280" height="280" />
+                            </div>
+                            <div class="col-12 md-3">
+                                ${{producto.precio}}
+                            </div>
+                            <div class="col-12 md-3">
+                                {{producto.detalle}}
+                            </div>
+                            <div class="col-12 md-3">
+                                <p-button label="Editar" icon="pi pi-user-edit"
+                                    (click)="cargarModalEditarProducto(producto)">
+                                </p-button>
+                            </div>
+                        </div>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+
+        <p-dialog header="Editar Producto" [(visible)]="displayEditar" [style]="{width: '60vw', height: '60vw'}"
+            *ngIf="productoEditar">
+            <div class="p-grid">
+                <div class="p-col-12">
+                    <label>Titulo</label>
+                </div>
+                <div class="p-col-12">
+                    <input id="float-input" type="text" pInputText [(ngModel)]="productoEditar.titulo">
+                </div>
+                <div class="p-col-12">
+                    <label>Imagen</label>
+                </div>
+                <div class="p-col-12">
+                    <input id="float-input" type="file" pInputtext [(ngModel)]="productoEditar.imagen">
+                </div>
+                <div class="p-col-12">
+                    <label>precio</label>
+                </div>
+                <div class="p-col-12">
+                    <input id="float-input" type="number" pInputText [(ngModel)]="productoEditar.precio">
+                </div>
+                <div class="p-col-12">
+                    <label>detalle</label>
+                </div>
+                <div class="p-col-12">
+                    <textarea pInputTextarea [(ngModel)]="productoEditar.detalle"></textarea>
+                </div>
+                <br>
+                <div class="p-col-12">
+                    <p-button label="Guardar" icon="pi pi-user-edit" (click)="guardarProducto(productoEditar)">
+                    </p-button>
+                </div>
+            </div>
+        </p-dialog>
+    </div>
+</section>
+<br>
+<br>
