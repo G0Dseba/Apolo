@@ -1,6 +1,6 @@
 package cl.apolo.rest;
 
-import java.util.Date;
+
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
@@ -31,14 +31,13 @@ public class NoticiaController {
 	public String test3() {
 		try {
 			byte[] imagen = Base64.getEncoder().encode("imagen".getBytes());
-			Date fecha = new Date(010006);
 			Noticia not = new Noticia();
 			not.setTitulo("test3");
 			not.setSubtitulo("test3");
 			not.setNombre("test3");
 			not.setImagen(imagen);
 			not.setTipo("test3");
-			not.setFecha(fecha);
+			not.setFecha("fecha");
 			not.setDetalle("test3");
 			not.setAutor("test3");
 
@@ -54,7 +53,7 @@ public class NoticiaController {
 	@PostMapping(value = "/insertarn", consumes = "application/json")
 	public String insertarn(@RequestBody Noticia not) {
 		try {
-
+			not.setImagen(Base64.getEncoder().encode("imagen".getBytes()));
 			noticiarepo.save(not);
 			return "exito";
 		} catch (Exception e) {
@@ -67,6 +66,7 @@ public class NoticiaController {
 	public String actualizarn(@RequestBody Noticia not) {
 		try {
 
+			not.setImagen(Base64.getEncoder().encode("imagen".getBytes()));
 			noticiarepo.save(not);
 			return "exito";
 		} catch (Exception e) {
@@ -100,5 +100,7 @@ public class NoticiaController {
 		}
 		return retorno;
 	}
+	
+	
 
 }

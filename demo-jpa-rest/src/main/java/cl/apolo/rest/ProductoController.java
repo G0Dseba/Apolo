@@ -35,6 +35,7 @@ public class ProductoController {
 			pro.setTipo("test5");
 			pro.setPrecio(9);
 			pro.setDetalle("test5");
+			pro.setVendedor("test5");
 			pro.setCins(1);
 			
 			productorepo.save(pro);
@@ -47,6 +48,7 @@ public class ProductoController {
 	public String insertarp(@RequestBody Producto pro) {
 		try {
 		
+			pro.setImagen(Base64.getEncoder().encode("imagen".getBytes()));
 			productorepo.save(pro);
 		return "exito";
 		}catch(Exception e) {
@@ -58,6 +60,7 @@ public class ProductoController {
 		public String actualizarp(@RequestBody Producto pro) {
 		try {
 		
+		pro.setImagen(Base64.getEncoder().encode("imagen".getBytes()));
 		productorepo.save(pro);
 			return "exito";
 		}catch(Exception e) {

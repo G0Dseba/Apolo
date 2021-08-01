@@ -1,7 +1,6 @@
 package cl.apolo.entities;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Arrays;
 
 import javax.persistence.Column;
@@ -9,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 
 @Entity
 public class Noticia implements Serializable {
@@ -26,7 +28,9 @@ public class Noticia implements Serializable {
     private String nombre;
     private byte[] imagen;
     private String tipo;
-    private Date fecha;
+    @JsonFormat(pattern = "dd-MM-yyyy", shape = Shape.STRING)
+    @Column(name ="fecha")
+    private String fecha;
     private String detalle;
     private String autor;
     
@@ -34,7 +38,7 @@ public class Noticia implements Serializable {
 		super();
 	}
 
-	public Noticia(Integer cn, String titulo, String subtitulo, String nombre, byte[] imagen, String tipo, Date fecha,
+	public Noticia(Integer cn, String titulo, String subtitulo, String nombre, byte[] imagen, String tipo, String fecha,
 			String detalle, String autor) {
 		super();
 		this.cn = cn;
@@ -96,11 +100,11 @@ public class Noticia implements Serializable {
 		this.tipo = tipo;
 	}
 
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 
@@ -126,4 +130,6 @@ public class Noticia implements Serializable {
 				+ ", imagen=" + Arrays.toString(imagen) + ", tipo=" + tipo + ", fecha=" + fecha + ", detalle=" + detalle
 				+ ", autor=" + autor + "]";
 	}
+
+	
 }

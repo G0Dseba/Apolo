@@ -25,12 +25,13 @@ public class Producto implements Serializable {
     private String tipo;
     private Integer precio;
     private String detalle;
+    private String vendedor;
     private Integer cins;
 	public Producto() {
 		super();
 	}
 	public Producto(Integer cp, String titulo, String nombre, byte[] imagen, String tipo, Integer precio,
-			String detalle, Integer cins) {
+			String detalle, String vendedor, Integer cins) {
 		super();
 		this.cp = cp;
 		this.titulo = titulo;
@@ -39,6 +40,7 @@ public class Producto implements Serializable {
 		this.tipo = tipo;
 		this.precio = precio;
 		this.detalle = detalle;
+		this.vendedor = vendedor;
 		this.cins = cins;
 	}
 	public Integer getCp() {
@@ -83,21 +85,24 @@ public class Producto implements Serializable {
 	public void setDetalle(String detalle) {
 		this.detalle = detalle;
 	}
+	public String getVendedor() {
+		return vendedor;
+	}
+	public void setVendedor(String vendedor) {
+		this.vendedor = vendedor;
+	}
 	public Integer getCins() {
 		return cins;
 	}
 	public void setCins(Integer cins) {
 		this.cins = cins;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 	@Override
 	public String toString() {
 		return "Producto [cp=" + cp + ", titulo=" + titulo + ", nombre=" + nombre + ", imagen="
-				+ Arrays.toString(imagen) + ", tipo=" + tipo + ", precio=" + precio + ", detalle=" + detalle + ", cins="
-				+ cins + "]";
+				+ Arrays.toString(imagen) + ", tipo=" + tipo + ", precio=" + precio + ", detalle=" + detalle
+				+ ", vendedor=" + vendedor + ", cins=" + cins + "]";
 	}
-    
+	
 
 }
