@@ -9,10 +9,11 @@
           <li><a class="nav-link scrollto" [routerLink]="['home']">Mostrar Usuario</a></li>
           <li><a class="nav-link scrollto" [routerLink]="['mostrar-noticia']">Mostrar Noticia</a></li>
           <li><a class="nav-link scrollto" [routerLink]="['mostrar-producto']">Mostrar Producto</a></li>
+          <li><a class="nav-link scrollto" [routerLink]="['agregar-usuario']">Agregar Usuario</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
-
+      <a class="book-a-table-btn scrollto d-none d-lg-flex " *ngIf="loginService.validarUsuario()" (click)="cerrarSesion()">Cerrar Sesión</a>
     </div>
   </header>
   

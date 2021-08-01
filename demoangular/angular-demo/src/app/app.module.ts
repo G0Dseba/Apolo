@@ -20,6 +20,11 @@ import {InputTextModule} from 'primeng/inputtext';
 import { MostrarNoticiaComponent } from './paginas/mostrar-noticia/mostrar-noticia.component';
 import { MostrarProductoComponent } from './paginas/mostrar-producto/mostrar-producto.component';
 import { FooterComponent } from './paginas/footer/footer.component';
+import { AgregarUsuarioComponent } from './paginas/agregar-usuario/agregar-usuario.component';
+import {CardModule} from 'primeng/card';
+import { LoginComponent } from './paginas/login/login.component';
+import {MessagesModule} from 'primeng/messages'; 
+import {MessageModule} from 'primeng/message';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +33,8 @@ import { FooterComponent } from './paginas/footer/footer.component';
     MostrarNoticiaComponent,
     MostrarProductoComponent,
     FooterComponent,
+    AgregarUsuarioComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,10 @@ import { FooterComponent } from './paginas/footer/footer.component';
     DialogModule,
     InputTextModule,
     InputTextareaModule,
-    FileUploadModule
+    FileUploadModule,
+    CardModule,
+    MessagesModule,
+    MessageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
