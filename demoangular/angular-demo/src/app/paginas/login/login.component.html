@@ -1,0 +1,23 @@
+<section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+        <div class="formularios">
+            <p-card>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
+                    <input type="email" name="correo" class="form-control" id="email"  size="30" required aria-describedby="emailHelp"
+                    [(ngModel)]="iniciarSesion.correo">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contrasena</label>
+                    <input type="password" name="contrasena" class="form-control" id="Password1" placeholder="Entre 4 a 8 carácteres"
+                    [(ngModel)]="iniciarSesion.contrasena">
+                </div>
+                <button  class="btn btn-primary"  (click)="loguear(iniciarSesion)">Login</button>
+                <div>
+                    <p-messages [(value)]="msgLoginErroneo" [enableService]="false" *ngIf="loginErroneo"></p-messages>
+                </div>
+            </p-card>
+            
+        </div>
+    </div>
+</section>               
