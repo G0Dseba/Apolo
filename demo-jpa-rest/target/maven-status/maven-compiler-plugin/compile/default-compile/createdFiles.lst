@@ -1,0 +1,16 @@
+cl\apolo\entities\Instrumento.class
+cl\apolo\entities\TipoInstrumento.class
+cl\apolo\rest\UsuarioController.class
+cl\apolo\repository\UsuarioRepository.class
+cl\apolo\rest\TipoInstrumentoController.class
+cl\apolo\repository\TipoInstrumentoRepository.class
+cl\apolo\repository\NoticiaRepository.class
+cl\apolo\entities\Noticia.class
+cl\apolo\entities\Usuario.class
+cl\apolo\DemoJpaRestApplication.class
+cl\apolo\entities\Producto.class
+cl\apolo\repository\InstrumentoRepository.class
+cl\apolo\rest\ProductoController.class
+cl\apolo\repository\ProductoRepository.class
+cl\apolo\rest\NoticiaController.class
+cl\apolo\rest\InstrumentoController.class
