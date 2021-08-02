@@ -30,8 +30,7 @@ public class ProductoController {
 			byte[] imagen = Base64.getEncoder().encode("imagen".getBytes());								
 			Producto pro = new Producto();
 			pro.setTitulo("test5");			
-			pro.setNombre("test5");
-			pro.setImagen(imagen);
+			pro.setImagen("test5");
 			pro.setTipo("test5");
 			pro.setPrecio(9);
 			pro.setDetalle("test5");
@@ -48,7 +47,7 @@ public class ProductoController {
 	public String insertarp(@RequestBody Producto pro) {
 		try {
 		
-			pro.setImagen(Base64.getEncoder().encode("imagen".getBytes()));
+			//pro.setImagen(Base64.getEncoder().encode("imagen".getBytes()));
 			productorepo.save(pro);
 		return "exito";
 		}catch(Exception e) {
@@ -60,7 +59,7 @@ public class ProductoController {
 		public String actualizarp(@RequestBody Producto pro) {
 		try {
 		
-		pro.setImagen(Base64.getEncoder().encode("imagen".getBytes()));
+		//pro.setImagen(Base64.getEncoder().encode("imagen".getBytes()));
 		productorepo.save(pro);
 			return "exito";
 		}catch(Exception e) {

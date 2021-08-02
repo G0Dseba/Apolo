@@ -31,4 +31,15 @@ export class ProductoService {
       this.httpOptions
     );
   }
+  agregarProducto(producto:Producto){
+    const body = JSON.stringify(producto);
+    console.log(body);
+    this.httpOptions = {
+      headers: new HttpHeaders({"Content-Type": "application/json"}),
+    };
+    return this.http.post("http://localhost:8080/insertarp",
+      body,
+      this.httpOptions 
+    );
+  }
 }

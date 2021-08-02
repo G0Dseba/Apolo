@@ -20,8 +20,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="username" class="form-label">Detalle</label>
-                        <input type="text" name="nombre" class="form-control" id="username" aria-describedby="username"
-                        [(ngModel)]="agregarNoticia.detalle">
+                        <textarea class="form-control" name="detalle" id="detalle" rows="3"
+                        [(ngModel)]="agregarNoticia.detalle"></textarea>
                     </div>            
                 </form>
                 <button  class="btn btn-primary" (click)="registrar(agregarNoticia)"> Publicar Noticia </button>

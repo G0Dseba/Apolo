@@ -1,0 +1,67 @@
+
+<section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+        <h1><strong>Noticias del Dios de la musica   
+        </strong></h1>
+        <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+            <div class="grid">
+                <div *ngFor="let noticia of listaNoticias" class="col-12">
+                    <p-card>
+                        <div class="grid">
+                            <div class="col-4 md-3">
+                                <div class="col-12">
+                                    <img src="data:{{noticia.tipo}};base64,{{noticia.imagen}}" width="100%" />
+                                </div>
+                            </div>
+                            <div class="col-8 ">
+                                <div class="col-12 flex align-items-left justify-content-left">
+                                    <h2><strong>{{noticia.titulo}}</strong></h2>
+                                </div>
+                                <div class="col-12 flex align-items-left justify-content-left">
+                                    <h4><strong>{{noticia.subtitulo}}</strong></h4>
+                                </div>
+                                <div class="col-12 md-3">
+                                    {{noticia.detalle}}
+                                </div>
+                                <div class="col-12 md-3">
+                                    {{noticia.autor}} - <strong>{{noticia.fecha | date: "dd/MM/yyyy"}}</strong>
+                                </div>                                
+                            </div>
+                        </div>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+        <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+            <h1><strong>Productos de Apolo  
+            </strong></h1>
+            <br>
+            <div class="grid">
+                <div *ngFor="let producto of listaProductos" class="col">
+                    <p-card>
+                        <div class="grid">
+                            <div class="col-12">
+                                {{producto.titulo}}
+                            </div>
+                            <div class="col-12 md-3">
+                                <img src="data:image/jpeg;base64,{{producto.imagen}}" width="280" height="280" />
+                            </div>
+                            <div class="col-12 md-3">
+                                ${{producto.precio}}
+                            </div>
+                            <div class="col-12 md-3">
+                                {{producto.detalle}}
+                            </div>                           
+                        </div>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<br>

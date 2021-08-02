@@ -37,11 +37,6 @@ export class MostrarNoticiaComponent implements OnInit {
     console.log(this.noticiaEditar);
 
   }
-  // guardarNoticia(noticia:Noticia){
-  //   this.noticiaService.editarNoticia(noticia).subscribe((res:any)=>{
-  //     console.log(res);
-  //   });
-  // }
   guardarNoticia(noticia: Noticia) {
     let usuario: Usuario = JSON.parse(this.loginService.obtenerUsuario());
     noticia.autor = usuario.nombre;

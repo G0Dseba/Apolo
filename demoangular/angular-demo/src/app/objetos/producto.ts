@@ -1,8 +1,7 @@
 export interface Producto {
     cp?: number,
     titulo?: string,
-    nombre?: string,
-    imagen?: Blob,
+    imagen?: string,
     tipo?: string,
     precio?: number;
     detalle?: string,

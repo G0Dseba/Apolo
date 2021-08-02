@@ -20,8 +20,7 @@ public class Producto implements Serializable {
 	@Column(name ="cp", unique =true, nullable=false)
 	private Integer cp;
 	private String titulo;
-	private String nombre;
-	private byte[] imagen;
+	private String imagen;
     private String tipo;
     private Integer precio;
     private String detalle;
@@ -30,12 +29,11 @@ public class Producto implements Serializable {
 	public Producto() {
 		super();
 	}
-	public Producto(Integer cp, String titulo, String nombre, byte[] imagen, String tipo, Integer precio,
-			String detalle, String vendedor, Integer cins) {
+	public Producto(Integer cp, String titulo, String imagen, String tipo, Integer precio, String detalle,
+			String vendedor, Integer cins) {
 		super();
 		this.cp = cp;
 		this.titulo = titulo;
-		this.nombre = nombre;
 		this.imagen = imagen;
 		this.tipo = tipo;
 		this.precio = precio;
@@ -55,16 +53,10 @@ public class Producto implements Serializable {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public byte[] getImagen() {
+	public String getImagen() {
 		return imagen;
 	}
-	public void setImagen(byte[] imagen) {
+	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
 	public String getTipo() {
@@ -99,10 +91,10 @@ public class Producto implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Producto [cp=" + cp + ", titulo=" + titulo + ", nombre=" + nombre + ", imagen="
-				+ Arrays.toString(imagen) + ", tipo=" + tipo + ", precio=" + precio + ", detalle=" + detalle
-				+ ", vendedor=" + vendedor + ", cins=" + cins + "]";
+		return "Producto [cp=" + cp + ", titulo=" + titulo + ", imagen=" + imagen + ", tipo=" + tipo + ", precio="
+				+ precio + ", detalle=" + detalle + ", vendedor=" + vendedor + ", cins=" + cins + "]";
 	}
+	
 	
 
 }

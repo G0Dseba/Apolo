@@ -7,6 +7,7 @@ import { AgregarUsuarioComponent } from './paginas/agregar-usuario/agregar-usuar
 import { AgregarProductoComponent } from './paginas/agregar-producto/agregar-producto.component';
 import { LoginComponent } from './paginas/login/login.component';
 import { AgregarNoticiaComponent } from './paginas/agregar-noticia/agregar-noticia.component';
+import { ApoloPrincipalComponent } from './paginas/apolo-principal/apolo-principal.component';
 
 const routes: Routes = [
 {path:"home",component:PaginaHomeComponent},
@@ -15,7 +16,7 @@ const routes: Routes = [
 {path:"mostrar-producto",component:MostrarProductoComponent},
 {path:"agregar-usuario",component:AgregarUsuarioComponent},
 {path:"agregar-producto",component:AgregarProductoComponent},
-{path:"agregar-noticia",component:AgregarNoticiaComponent},
+{path:"apolo-principal",component:ApoloPrincipalComponent},
 { path: '', component: LoginComponent}
 ];
 

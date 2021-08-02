@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {DynamicDialogModule} from 'primeng/dynamicdialog';
 import {DialogModule} from 'primeng/dialog';
-
+import {MultiSelectModule} from 'primeng/multiselect';
 import {InputTextModule} from 'primeng/inputtext';
 import { MostrarNoticiaComponent } from './paginas/mostrar-noticia/mostrar-noticia.component';
 import { MostrarProductoComponent } from './paginas/mostrar-producto/mostrar-producto.component';
@@ -29,6 +29,7 @@ import {MessageModule} from 'primeng/message';
 import { AgregarNoticiaComponent } from './paginas/agregar-noticia/agregar-noticia.component';
 import {DataViewModule} from 'primeng/dataview';
 import { AgregarProductoComponent } from './paginas/agregar-producto/agregar-producto.component';
+import { ApoloPrincipalComponent } from './paginas/apolo-principal/apolo-principal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ import { AgregarProductoComponent } from './paginas/agregar-producto/agregar-pro
     LoginComponent,
     AgregarNoticiaComponent,
     AgregarProductoComponent,
+    ApoloPrincipalComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,8 @@ import { AgregarProductoComponent } from './paginas/agregar-producto/agregar-pro
     CardModule,
     MessagesModule,
     MessageModule,
-    DataViewModule
+    DataViewModule,
+    MultiSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
