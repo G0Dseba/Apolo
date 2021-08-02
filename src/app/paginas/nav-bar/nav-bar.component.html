@@ -1,0 +1,21 @@
+<header id="header" class="fixed-top d-flex align-items-cente">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">Apolo</a></h1>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" [routerLink]="['home']">Home</a></li>
+          <li><a class="nav-link scrollto" [routerLink]="['home']">Mostrar Usuario</a></li>
+          <li><a class="nav-link scrollto" [routerLink]="['mostrar-noticia']">Mostrar Noticia</a></li>
+          <li><a class="nav-link scrollto" [routerLink]="['agregar-noticia']">Agregar Noticia</a></li>
+          <li><a class="nav-link scrollto" [routerLink]="['mostrar-producto']">Mostrar Producto</a></li>
+          <li><a class="nav-link scrollto" [routerLink]="['agregar-producto']">Agregar Producto</a></li>
+          <li><a class="nav-link scrollto" [routerLink]="['agregar-usuario']">Agregar Usuario</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <a class="book-a-table-btn scrollto d-none d-lg-flex " *ngIf="loginService.validarUsuario()" (click)="cerrarSesion()">Cerrar Sesión</a>
+    </div>
+  </header>
+  

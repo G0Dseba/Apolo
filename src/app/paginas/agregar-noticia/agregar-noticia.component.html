@@ -1,0 +1,31 @@
+<section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+        <div class="formularios">
+            <p-card>
+            
+                <form method="post"  enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Título</label>
+                        <input  type="text" name="nombre" class="form-control" id="titulo" aria-describedby="Título"
+                        [(ngModel)]="agregarNoticia.titulo">
+                    </div>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Subtítulo</label>
+                        <input  type="text" name="nombre" class="form-control" id="subtitulo" aria-describedby="Subtítulo"
+                        [(ngModel)]="agregarNoticia.subtitulo">
+                    </div>
+                    <div>
+                        Ingresa el archivo:
+                        <input [(ngModel)]="agregarNoticia.imagen" id="imagen" name="imagen" type="file"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="detalle"class="form-label">Detalle</label>
+                        <textarea class="form-control"name="detalle" id="detalle" rows="3"></textarea>
+                    </div>
+                    
+                </form>
+                <button  class="btn btn-primary" (click)="registrarn(agregarNoticia)">Subir</button>
+            </p-card>    
+        </div>
+    </div>
+</section>
