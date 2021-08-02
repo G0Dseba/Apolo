@@ -1,7 +1,9 @@
 package cl.apolo.entities;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,12 +27,9 @@ public class Noticia implements Serializable {
 	private Integer cn;
     private String titulo;
     private String subtitulo;
-    private String nombre;
-    private byte[] imagen;
+    private String imagen;
     private String tipo;
-    @JsonFormat(pattern = "dd-MM-yyyy", shape = Shape.STRING)
-    @Column(name ="fecha")
-    private String fecha;
+    private LocalDate fecha;
     private String detalle;
     private String autor;
     
@@ -38,13 +37,12 @@ public class Noticia implements Serializable {
 		super();
 	}
 
-	public Noticia(Integer cn, String titulo, String subtitulo, String nombre, byte[] imagen, String tipo, String fecha,
+	public Noticia(Integer cn, String titulo, String subtitulo, String imagen, String tipo, LocalDate fecha,
 			String detalle, String autor) {
 		super();
 		this.cn = cn;
 		this.titulo = titulo;
 		this.subtitulo = subtitulo;
-		this.nombre = nombre;
 		this.imagen = imagen;
 		this.tipo = tipo;
 		this.fecha = fecha;
@@ -76,19 +74,11 @@ public class Noticia implements Serializable {
 		this.subtitulo = subtitulo;
 	}
 
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public byte[] getImagen() {
+	public String getImagen() {
 		return imagen;
 	}
 
-	public void setImagen(byte[] imagen) {
+	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
 
@@ -100,11 +90,11 @@ public class Noticia implements Serializable {
 		this.tipo = tipo;
 	}
 
-	public String getFecha() {
+	public LocalDate getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(String fecha) {
+	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
 
@@ -126,8 +116,8 @@ public class Noticia implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Noticia [cn=" + cn + ", titulo=" + titulo + ", subtitulo=" + subtitulo + ", nombre=" + nombre
-				+ ", imagen=" + Arrays.toString(imagen) + ", tipo=" + tipo + ", fecha=" + fecha + ", detalle=" + detalle
+		return "Noticia [cn=" + cn + ", titulo=" + titulo + ", subtitulo=" + subtitulo +
+			 ", imagen=" + imagen + ", tipo=" + tipo + ", fecha=" + fecha + ", detalle=" + detalle
 				+ ", autor=" + autor + "]";
 	}
 

@@ -30,4 +30,15 @@ export class UsuarioService {
       this.httpOptions
     );
   }
+  agregarUsuario(usuario:Usuario){
+    const body = JSON.stringify(usuario);
+    console.log(body);
+    this.httpOptions = {
+      headers: new HttpHeaders({"Content-Type": "application/json"}),
+    };
+    return this.http.post("http://localhost:8080/insertar",
+      body,
+      this.httpOptions 
+    );
+  }
 }

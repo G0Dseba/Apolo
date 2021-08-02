@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   iniciarSesion: Usuario = {};
   msgLoginErroneo: Message[] = [];
   loginErroneo:boolean =false;
+  
   constructor(private loginService: ServicioAutentificacionService, protected router: Router, private messageService: MessageService) { }
 
   ngOnInit(): void {

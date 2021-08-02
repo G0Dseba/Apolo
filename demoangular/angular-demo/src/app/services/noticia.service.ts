@@ -29,5 +29,15 @@ export class NoticiaService {
       this.httpOptions
     );
   }
-
+  agregarNoticia(noticia:Noticia){
+    const body = JSON.stringify(noticia);
+    console.log(body);
+    this.httpOptions = {
+      headers: new HttpHeaders({"Content-Type": "application/json"}),
+    };
+    return this.http.post("http://localhost:8080/insertarn",
+      body,
+      this.httpOptions 
+    );
+  }
 }

@@ -7,7 +7,7 @@
                         <div class="grid">
                             <div class="col-4 md-3">
                                 <div class="col-12">
-                                    <img src="data:image/jpeg;base64,{{noticia.imagen}}" width="100%" />
+                                    <img src="data:{{noticia.tipo}};base64,{{noticia.imagen}}" width="100%" />
                                 </div>
                             </div>
                             <div class="col-8 ">
@@ -50,10 +50,9 @@
                         <input pInputText id="lastname6" type="text" class="inputfield w-full"
                             [(ngModel)]="noticiaEditar.subtitulo">
                     </div>
-                    <div class="field col-12 md:col-6">
-                        <label for="firstname6">Imagen</label>
-                        <input pInputText id="firstname6" type="file" class="inputfield w-full"
-                            [(ngModel)]="noticiaEditar.imagen">
+                    <div>
+                        Ingresa la imagen nueva
+                        <p-fileUpload name="myfile[]" [customUpload]="true" (uploadHandler)="myUploader($event)"></p-fileUpload>
                     </div>
                     <div class="field col-12">
                         <label for="address">Detalle</label>
