@@ -33,7 +33,8 @@ export class ProductoService {
   }
   agregarProducto(producto:Producto){
     const body = JSON.stringify(producto);
-    console.log(body);
+
+    console.log(producto);
     this.httpOptions = {
       headers: new HttpHeaders({"Content-Type": "application/json"}),
     };

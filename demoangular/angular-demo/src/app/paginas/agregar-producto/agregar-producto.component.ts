@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Instrumento } from 'src/app/objetos/instrumento';
 import { Producto } from 'src/app/objetos/producto';
 import { Usuario } from 'src/app/objetos/usuario';
 import { ProductoService } from 'src/app/services/producto.service';
@@ -13,14 +14,16 @@ import { ServicioAutentificacionService } from 'src/app/services/servicio-autent
 export class AgregarProductoComponent implements OnInit {
   agregarProducto: Producto = {};
 
-
   constructor(private productoService: ProductoService, private loginService: ServicioAutentificacionService, protected router: Router) { }
 
 
   registrar(producto: Producto) {
     let usuario: Usuario = JSON.parse(this.loginService.obtenerUsuario());
     producto.vendedor = usuario.nombre;
+    console.log(producto);
+    console.log(this.agregarProducto);
     this.productoService.agregarProducto(producto).subscribe((res: any) => {
+      
       console.log(res);
 
 
