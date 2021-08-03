@@ -17,12 +17,6 @@
                                 <div class="col-12 flex align-items-left justify-content-left">
                                     <h2><strong>{{noticia.titulo}}</strong></h2>
                                 </div>
-                                <div class="col-12 flex align-items-left justify-content-left">
-                                    <h4><strong>{{noticia.subtitulo}}</strong></h4>
-                                </div>
-                                <div class="col-12 md-3">
-                                    {{noticia.detalle}}
-                                </div>
                                 <div class="col-12 md-3">
                                     {{noticia.autor}} - <strong>{{noticia.fecha | date: "dd/MM/yyyy"}}</strong>
                                 </div>                                
@@ -54,7 +48,7 @@
                                 ${{producto.precio}}
                             </div>
                             <div class="col-12 md-3">
-                                {{producto.detalle}}
+                                {{producto.vendedor}}
                             </div>                           
                         </div>
                     </p-card>
