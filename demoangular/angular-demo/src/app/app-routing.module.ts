@@ -11,13 +11,14 @@ import { ApoloPrincipalComponent } from './paginas/apolo-principal/apolo-princip
 
 const routes: Routes = [
 {path:"home",component:PaginaHomeComponent},
+{path:"login",component:LoginComponent},
 {path:"agregar-noticia",component:AgregarNoticiaComponent},
 {path:"mostrar-noticia",component:MostrarNoticiaComponent},
 {path:"mostrar-producto",component:MostrarProductoComponent},
 {path:"agregar-usuario",component:AgregarUsuarioComponent},
 {path:"agregar-producto",component:AgregarProductoComponent},
 {path:"apolo-principal",component:ApoloPrincipalComponent},
-{ path: '', component: LoginComponent}
+{ path: '', component: ApoloPrincipalComponent}
 ];
 
 @NgModule({

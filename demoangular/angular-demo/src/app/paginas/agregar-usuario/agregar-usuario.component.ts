@@ -22,9 +22,9 @@ export class AgregarUsuarioComponent implements OnInit {
     this.agregarUsuario= {};
   }
   ngOnInit(): void {
-    if(!this.loginService.validarUsuario()){
-      this.router.navigate(['/']);
-     }
+    // if(!this.loginService.validarUsuario()){
+    //   this.router.navigate(['/']);
+    //  }
     this.agregarUsuario= {};
   }
   

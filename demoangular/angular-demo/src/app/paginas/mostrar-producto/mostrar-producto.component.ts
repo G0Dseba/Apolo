@@ -41,6 +41,18 @@ export class MostrarProductoComponent implements OnInit {
       console.log(res);
     });
   }
+  myUploader(event: any) {
+    console.log(event.files);
+    this.productoEditar.tipo = event.files[0].type;
+    let fileReader = new FileReader();
+    fileReader.readAsDataURL(event.files[0]);
+    fileReader.onload = () => {
+      // Will print the base64 here.
+      console.log(fileReader.result);
+      //this.agregarNoticia.imagen = new Blob([fileReader.result!=null?fileReader.result:new Blob]);
+      this.productoEditar.imagen = (fileReader.result as string).split('base64,')[1];
+    };
+  }
 }
 
 

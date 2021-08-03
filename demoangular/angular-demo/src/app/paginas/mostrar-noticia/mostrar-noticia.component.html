@@ -23,11 +23,11 @@
                                 <div class="col-12 md-3">
                                     {{noticia.autor}} - <strong>{{noticia.fecha | date: "dd/MM/yyyy"}}</strong>
                                 </div>
-                                <div class="col-12 md-3">
+                                <!-- <div class="col-12 md-3">
                                     <p-button label="Editar" icon="pi pi-user-edit"
                                         (click)="cargarModalEditarNoticia(noticia)">
                                     </p-button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </p-card>
@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <p-dialog header="Editar Noticia" [(visible)]="displayEditar" [style]="{width: '90vw', height: '100vw'}"
+        <!-- <p-dialog header="Editar Noticia" [(visible)]="displayEditar" [style]="{width: '90vw', height: '100vw'}"
             *ngIf="noticiaEditar">
             <div class="card">
                 <h5>Modificar Noticia</h5>
@@ -65,7 +65,7 @@
             <div class="p-col-12">
                 <p-button label="Guardar" icon="pi pi-user-edit" (click)="guardarNoticia(noticiaEditar)"></p-button>
             </div>
-        </p-dialog>
+        </p-dialog> -->
     </div>
 </section>
 <br>
